@@ -1,0 +1,29 @@
+<div class="row">
+   
+    
+    <h1>Gatitos <small>en</small> Adopcion</h1>
+
+
+    <img src="assets/img/logo.png" width="80" height="80" class="d-inline-block align-left" alt="">
+
+</div>
+<hr>
+<div class="card-columns">
+
+    <div *ngFor="let gato of gatos; let i = index " class="card animated fadeIn fast"> 
+        <img [src]="gato.img" class="card-img-top" [alt]="gato.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{gato.nombre}}</h5>
+            <p class="card-text">{{gato.edad}}</p>
+            <p class="card-text"><small class="text-muted">{{gato.contacto}}</small></p>
+    
+            <button (click)="verGato(i)" type="button" class="btn btn-outline-primary btn-block">
+            Ver mas...
+            </button>
+    
+        </div>
+    </div>
+
+    <!-- <app-heroe-tarjeta (heroeSeleccionado)="verHeroe($event)" [heroe]="heroe" [indice]="i" >
+    </app-heroe-tarjeta> -->
+</div>

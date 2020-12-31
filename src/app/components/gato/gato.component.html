@@ -1,0 +1,18 @@
+<h1 class="animated fadeIn">{{gato.nombre}}</h1><small>Edad: {{gato.edad}}</small>
+<hr>
+<div class="row animated fadeIn fast">
+    <div class="col-md-4">
+        <img [src]="gato.img" class="img-fluid" [alt]="gato.nombre">
+        <br><br>
+        <a [routerLink]="['/gatos']" class="btn btn-outline-danger btn-block">Regresar</a>
+    </div>
+    <div class="col-md-8">
+        <h3>Telefono referencia: {{gato.contacto}}</h3>
+        <hr>
+        <p>
+            {{gato.descripcion}}
+        </p>
+       
+
+    </div>
+</div>

@@ -1,0 +1,63 @@
+
+    <div class="container">
+        <h1 class="display-4">NEKO, Generando Conciencia Colectiva</h1>
+        <img src="../../../../assets/img/baner.png" class="card-img" >
+        <br>
+        <p class="lead">#NoCompres ---> #Adopta!</p>
+        <br><br><hr>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="../../../../assets/img/adopta.png" class="card-img-top" >
+                    <div class="card-body">
+                      <h5 class="card-title">Adoptar</h5>
+                      <p class="card-text">Salva una vida gatuna, ellos tambien se merecen una segunda oportunidad, 
+                          veras como ellos te entregan todo su amor, te agradeceran el resto de su vida.
+                        #NoCompres   #Adopta</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="../../../../assets/img/ama.png" class="card-img-top" >
+                    <div class="card-body">
+                      <h5 class="card-title">Ama</h5>
+                      <p class="card-text">La forma en que un gato te da su afecto, es maravillosa, mas aun si lo rescatas, 
+                          aun que no lo demuestren tan seguido, hay muchas señales de afecto de las cuales puedes aprender.
+                      </p>
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="../../../../assets/img/educa.png" class="card-img-top" >
+                    <div class="card-body">
+                      <h5 class="card-title">Educa</h5>
+                      <p class="card-text">La mejor manera de criar a un gato, es mediante la educacion de higiene, de señas, 
+                          olfato, o ayudarte con los juguetes gatunos, hierba gatuna(en caso de ser muy arisco).</p>            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <agm-map style="height: 300px;" [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="agregarMarcador($event)">
+                    <agm-marker  *ngFor="let m of markers; let i = index"
+                    (markerClick)="clickedMarker(m.label, i)"
+                    [latitude]="m.lat"
+                    [longitude]="m.lng"
+                    [label]="m.label"
+                    [markerDraggable]="m.draggable"
+                    (dragEnd)="markerDragEnd(m, $event)"
+                    >
+                    <agm-info-window> 
+                        <strong>NEKO FUNDACION</strong>
+                      </agm-info-window>
+                </agm-marker>
+                </agm-map>
+            </div>
+
+        </div>
+    </div>
+

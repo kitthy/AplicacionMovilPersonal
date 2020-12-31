@@ -1,0 +1,34 @@
+<h1>Registro de voluntarios</h1>
+<hr>
+<div class="row text-right">
+  <div class="col">
+      <button class="btn btn-primary" routerLink="/voluntarios">
+         <i class="fa fa-arrow-left" aria-hidden="true"> Regresar</i>
+      </button>
+
+  </div>
+</div>
+
+    <form class="offset-1" (ngSubmit)="guardar(formulario)" #formulario="ngForm" >
+        <div class="form-group">
+          <label >Nombre Completo: </label>
+          <input [(ngModel)]="voluntario.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre Completo" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Tipo Voluntario</label>
+          <input [(ngModel)]="voluntario.tipovoluntario" name="tipovoluntario" type="text" class="form-control" placeholder="Tipo de Voluntario"  required>
+        </div>
+        <div class="form-group">
+            <label >Contacto: </label>
+            <input [(ngModel)]="voluntario.contacto" name="contacto" type="text" class="form-control" placeholder="Numero de contacto"  required>
+        </div>
+        <div class="form-group">
+            <label >Direccion: </label>
+            <input [(ngModel)]="voluntario.direccion" name="direccion" type="text" class="form-control" placeholder="Direccion"  required>
+        </div>
+        
+        
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </form>
+      <br>
+      <br>
